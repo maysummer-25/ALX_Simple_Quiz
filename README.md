@@ -62,7 +62,7 @@ function checkAnswer() {
 
 document.getElementById("submit-answer").addEventListener("click", checkAnswer);
 
----
+```
 
 ## 🔍 How to Run
 1. Clone this repository:
