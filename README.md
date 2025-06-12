@@ -1,87 +1,117 @@
-# ALX Simple Quiz
+# ALX Simple Projects by Mmesoma Chukwumezie
 
-A simple interactive quiz application built using HTML, CSS, and JavaScript.  
-This project was created by **Mmesoma Chukwumezie** as part of an ALX task to practice DOM manipulation and event handling with vanilla JavaScript.
-
----
-
-## 📋 Task Description
-
-The goal was to implement JavaScript functionality for a basic quiz.  
-Given the HTML and CSS template, the task was to bring the quiz to life by:
-
-- Writing a function to check the selected answer
-- Providing feedback to the user
-- Handling the submit event correctly
+This repository contains two beginner-friendly JavaScript projects completed as part of the ALX Software Engineering training. The projects helped reinforce my understanding of JavaScript fundamentals by adding interactivity to static HTML pages.
 
 ---
 
-## ✅ Features
+## 📘 1. Simple Interactive Quiz
 
-- Displays a math question with multiple-choice answers
-- Validates user’s selected radio option
-- Shows dynamic feedback:
-  - ✅ "Correct! Well done."
-  - ❌ "That's incorrect. Try again!"
-- Clean, responsive design
+### ✅ Description
+
+A minimal quiz app that checks the user's answer to a single question and provides instant feedback. This project introduced me to event handling, DOM manipulation, and conditional logic in JavaScript.
+
+### 🧠 Features
+
+- Displays a multiple-choice question: *What is 2 + 2?*
+- Allows the user to select one answer.
+- On clicking **Submit Answer**, the app checks correctness and displays:
+  - ✅ "Correct! Well done." if the answer is correct.
+  - ❌ "That's incorrect. Try again!" if wrong.
+
+### 🛠 Technologies
+
+- HTML
+- CSS
+- JavaScript
+
+### 📂 Files
+
+- `index.html`: Markup for the quiz structure.
+- `styles.css`: Styling for the quiz.
+- `quiz.js`: JavaScript logic that checks the answer.
+
+### 🔍 How It Works
+
+The `checkAnswer()` function:
+- Retrieves the selected radio input.
+- Compares the value to the correct answer (`"4"`).
+- Updates the feedback text based on the result.
 
 ---
 
-## 💡 How It Works
+## 📘 2. Simple Calculator
 
-1. The user selects one of the radio button answers.
-2. Clicking the **Submit Answer** button triggers the `checkAnswer` function.
-3. JavaScript compares the user’s answer to the correct answer (`4`).
-4. Feedback is displayed in real-time.
+### ✅ Description
 
----
+An interactive calculator app that performs basic arithmetic operations (addition, subtraction, multiplication, division). This task helped me understand functions, input handling, and event-driven programming.
 
-## 🧠 Key Concepts Practiced
+### 🧠 Features
 
-- DOM selection (`querySelector`, `getElementById`)
-- Event handling (`addEventListener`)
-- Working with radio buttons
-- Conditional logic (`if...else`)
+- Two number input fields
+- Four operation buttons: `+`, `-`, `*`, `/`
+- Displays the result after each calculation
 
----
+### 🛠 Technologies
 
-## 🔍 Sample JavaScript
+- HTML
+- CSS
+- JavaScript
+
+### 📂 Files
+
+- `calculator.html`: Layout and buttons
+- `calculator.css`: Styles for inputs and buttons
+- `calculator.js`: Logic to perform calculations and handle user input
+
+### 🔍 How It Works
+
+- Each operation has its own function: `add()`, `subtract()`, `multiply()`, `divide()`.
+- `parseFloat()` converts string inputs to numbers.
+- If input is empty, `|| 0` ensures the value defaults to 0.
+- Results are shown dynamically using DOM manipulation.
+
+### 📝 Example:
 
 ```js
-function checkAnswer() {
-  const correctAnswer = "4";
-  const userAnswer = document.querySelector('input[name="quiz"]:checked')?.value;
-  const feedback = document.getElementById("feedback");
-
-  if (userAnswer !== correctAnswer) {
-    feedback.textContent = "That's incorrect. Try again!";
-  } else {
-    feedback.textContent = "Correct! Well done.";
-  }
+function add(num1, num2) {
+  return num1 + num2;
 }
-
-document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+document.getElementById("add").addEventListener("click", function () {
+  const number1 = parseFloat(document.getElementById("number1").value) || 0;
+  const number2 = parseFloat(document.getElementById("number2").value) || 0;
+  const result = add(number1, number2);
+  document.getElementById("calculation-result").textContent = result;
+});
 
 ```
 
-## 🔍 How to Run
-1. Clone this repository:
- git clone https://github.com/your-username/ALX_Simple_Quiz
+## 🎯 What I Learned
+How to manipulate the DOM using JavaScript
 
-2. Open the index.html file in any modern browser.
-3. Select an answer and click Submit Answer.
+Handling user events like click
+
+Using parseFloat() and || for safe input parsing
+
+Separating logic (JavaScript) from structure (HTML) and style (CSS)
+
+Writing modular and readable functions for better code reuse
 
 ---
 
-## 👩‍💻 Author
+## 🔗 Repository Structure
+
+ALX_Simple_Quiz/
+│
+├── index.html         # Quiz app
+├── styles.css         # Styles for quiz
+├── quiz.js            # Quiz logic
+│
+├── calculator.html    # Calculator UI
+├── calculator.css     # Calculator styling
+└── calculator.js      # Calculator logic
+
+---
+
+## 🧑‍💻 Author
 Mmesoma Chukwumezie
-Aspiring Front-End Developer | Passionate about clean code and meaningful user experiences.
-
-Connect on LinkedIn [www.linkedin.com/in/mmesoma-chukwumezie]
-
----
-
-## 📄 License
-
-This project is part of the ALX Software Engineering program.
-Use it for learning and practice. Attribution appreciated.
+Aspiring Front-End Developer | Passionate about creating interactive web experiences.
